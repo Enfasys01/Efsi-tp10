@@ -1,0 +1,13 @@
+.caja{
+    border-radius: 3px;
+    border-color: #ABBFC3;
+    border-style: solid;
+    outline-width: 20;
+    border-width: 2px;
+    margin-bottom: 1rem;
+}
+.caja:hover{
+    transition: 0.5s;
+    background-color: #ABBFC3;
+    
+}
