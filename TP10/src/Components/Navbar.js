@@ -1,3 +1,11 @@
+import { Link } from "react-router-dom";
+const options=[
+  {title:'Home', path:'Home'},
+  {title:'Quienes somos', path:'QuienesSomos'},
+  {title:'Productos', path:'Productos'},
+  {title:'Contacto', path:'Contacto'},
+]
+
 export default function Navbar(){
     return(
         <nav class="navbar navbar-expand-lg">
@@ -10,18 +18,11 @@ export default function Navbar(){
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 text-uppercase">
-                  <li class="nav-item">
-                    <div class="nav-link active " aria-current="page">Inicio</div>
+                  {options.map((e,index)=>{return(<>
+                  <li class="nav-item" key={index}>
+                    <div class="nav-link" ><Link to={e.path}>{e.title}</Link></div>
                   </li>
-                  <li class="nav-item">
-                    <div class="nav-link" >Quienes somos</div>
-                  </li>
-                  <li class="nav-item">
-                    <div class="nav-link" >Productos</div>
-                  </li>
-                  <li class="nav-item">
-                    <div class="nav-link" >Contacto</div>
-                  </li>
+                  </>)})}
                 </ul>
               </div>
             </div>

@@ -6,19 +6,29 @@ import Carousel from './Components/Carousel';
 import Lista from './Components/Lista';
 import Separador from './Components/Separador';
 import Imagenes from './Components/Imagenes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './Components/Layout';
+import Home from './Routes/Home';
+import QuienesSomos from './Routes/QuienesSomos';
+import Productos from './Routes/Productos';
+import Contacto from './Routes/Contacto';
 
 
 
 function App() {
   return (
-    <div className="App">
-        <Navbar></Navbar>
-        <Carousel> </Carousel>
-        <Lista></Lista>
-        <Separador></Separador>
-        <Imagenes></Imagenes>
-        <Footer></Footer>
-    </div>
+    <>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+          <Route index path='/Home' element={<Home/>}/>
+          <Route path='/QuienesSomos' element={<QuienesSomos/>}/>
+          <Route path='/Productos' element={<Productos/>}/>
+          <Route path='/Contacto' element={<Contacto/>}/>
+        </Route>
+      </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
