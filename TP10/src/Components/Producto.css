@@ -11,3 +11,8 @@
     background-color: #ABBFC3;
     
 }
+
+.img{
+    object-fit: contain;
+    height: 250px;
+}
