@@ -1,5 +1,6 @@
 import Producto from "./Producto";
-let a=[0,1,2,3,4,5,6,7,8];
+import {Link} from 'react-router-dom'
+let a=[0,1,2];
 
 export default function Lista(){
     return(
@@ -9,8 +10,8 @@ export default function Lista(){
             </div>
             <div className="row">
                 {a.map(e=>{return(<Producto></Producto>);})}
-                
             </div>
+            <div className="text-center "> <Link to='/Productos'><span className="p-2 " style={{backgroundColor:'#ABBFC3'}}>Ver todos los productos...</span></Link></div>
         </div>
     );
 }

@@ -38,3 +38,59 @@ body, html {
     transform: rotate(360deg);
   }
 }
+
+
+.deco-box{
+  position: relative;
+}
+
+@keyframes fade-left{
+  from {
+    opacity: 0%;
+    margin-left: -200px;
+  }
+  to{
+    opacity: 100%;
+    margin-left: 0;
+  }
+}
+@keyframes fade-right{
+  from {
+    opacity: 0%;
+    margin-right: -200px;
+  }
+  to{
+    opacity: 100%;
+    margin-right: 0;
+  }
+}
+
+.deco{
+  overflow: hidden;
+  z-index: -1;
+  position: absolute;
+  background-color:#ABBFC3;
+  top: 10px;
+  height: 20vw;
+  min-height: 50px;
+  width: 75% !important;
+}
+
+.deco.right{
+  animation: 1300ms 1 ease-out fade-right;
+
+  right: 0px;
+}
+
+.deco.left{
+  animation: 1300ms 1 ease-out fade-left;
+  left: 0px;
+}
+
+.deco-box>div>img{
+  width: 50vw;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
