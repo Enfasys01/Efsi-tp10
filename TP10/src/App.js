@@ -13,24 +13,26 @@ import QuienesSomos from './Routes/QuienesSomos';
 import Productos from './Routes/Productos';
 import Contacto from './Routes/Contacto';
 import { CartProvider } from './Context/CartContext';
+import { useState } from 'react';
 
 
 
 function App() {
+  const [cart, setCart] = useState([])
   return (
     <>
-        <CartProvider value={''}>
-      <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route index path='/' element={<Home/>}/>
-          <Route path='/QuienesSomos' element={<QuienesSomos/>}/>
-          <Route path='/Productos' element={<Productos/>}/>
-          <Route path='/Contacto' element={<Contacto/>}/>
-        </Route>
-      </Routes>
-      </BrowserRouter>
-        </CartProvider>
+      <CartProvider value={[cart, setCart]}>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route index path='/' element={<Home/>}/>
+            <Route path='/QuienesSomos' element={<QuienesSomos/>}/>
+            <Route path='/Productos' element={<Productos/>}/>
+            <Route path='/Contacto' element={<Contacto/>}/>
+          </Route>
+        </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }

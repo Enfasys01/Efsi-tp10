@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+import Carrito from './Carrito'
 const options=[
   {title:'Home', path:'/'},
   {title:'Quienes somos', path:'/QuienesSomos'},
@@ -24,11 +24,7 @@ export default function Navbar(){
                     <div class="nav-link" ><Link to={e.path}>{e.title}</Link></div>
                   </li>
                   </>)})}
-                  <li class="nav-item " >
-                    <div className="nav-link">
-                      <AiOutlineShoppingCart size={30}/>
-                    </div>
-                  </li>
+                  <Carrito/>
                 </ul>
               </div>
             </div>

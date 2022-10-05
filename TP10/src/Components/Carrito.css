@@ -1,0 +1,26 @@
+.popover{
+  position: absolute;
+  left: -350px;
+  width: 400px;
+  max-width: 1000px;
+  max-height: 400px;
+  background: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.popover>h4{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+li{
+  position: relative;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}

@@ -10,7 +10,7 @@ const Productos = () => {
             <h3 class="pt-5 pb-2 fw-bold" style={{text:'left'}}>Nuestros productos</h3>
         </div>
         <div className="row">
-            {list.map(e=>{return(<Producto data={e}></Producto>);})}
+            {list.map((e,index)=>{return(<Producto data={e} key={index}></Producto>);})}
         </div>
     </div>
     </>

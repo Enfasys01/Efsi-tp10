@@ -16,3 +16,22 @@
     object-fit: contain;
     height: 250px;
 }
+
+.btn-cart{
+    border-radius: 0 !important;
+    color: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.btn-cart>span{
+    background-color: #ABBFC3;
+    padding: 5px;
+}
+
+.btn-cart>span:hover{
+    background-color: #92a2a5;
+
+}
