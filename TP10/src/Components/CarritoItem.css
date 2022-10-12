@@ -19,3 +19,11 @@
   padding: 10px;
   background: rgb(192, 0, 0);
 }
+
+.item{
+    border-color: #ABBFC3;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    outline-width: 20;
+    border-width: 2px;
+}

@@ -19,9 +19,10 @@ import { useState } from 'react';
 
 function App() {
   const [cart, setCart] = useState([])
+  const [total, setTotal] = useState(0)
   return (
     <>
-      <CartProvider value={[cart, setCart]}>
+      <CartProvider value={[cart, setCart,total, setTotal]}>
         <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout/>}>
