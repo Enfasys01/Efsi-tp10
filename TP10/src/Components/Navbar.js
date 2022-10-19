@@ -9,7 +9,7 @@ const options=[
 
 export default function Navbar(){
     return(
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-sm">
             <div class="container">
               <div class="navbar-brand">
                 <img srcSet="/img/Logo.png" style={{height: '100px'}}/>

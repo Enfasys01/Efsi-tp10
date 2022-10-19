@@ -1,11 +1,6 @@
 import './App.css';
 import './bootstrap.min.css';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import Carousel from './Components/Carousel';
-import Lista from './Components/Lista';
-import Separador from './Components/Separador';
-import Imagenes from './Components/Imagenes';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Components/Layout';
 import Home from './Routes/Home';
@@ -14,15 +9,14 @@ import Productos from './Routes/Productos';
 import Contacto from './Routes/Contacto';
 import { CartProvider } from './Context/CartContext';
 import { useState } from 'react';
-
+import ListaProductos from './Data/ListaProductos'
 
 
 function App() {
-  const [cart, setCart] = useState([])
-  const [total, setTotal] = useState(0)
+  const [items, setItems] = useState(ListaProductos)
   return (
     <>
-      <CartProvider value={[cart, setCart,total, setTotal]}>
+      <CartProvider value={[items, setItems]}>
         <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout/>}>

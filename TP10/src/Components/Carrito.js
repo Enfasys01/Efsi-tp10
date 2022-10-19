@@ -4,12 +4,9 @@ import CartContext from '../Context/CartContext'
 import './Carrito.css'
 import CarritoItem from './CarritoItem'
 const Carrito = ()=>{
-  const [cart, setCart, total, setTotal] = useContext(CartContext)
+  const [items, setItems] = useContext(CartContext)
+  
   const [isOpen, setOpen] = useState(false)
-  useEffect(()=>{setTotal(0)},[cart])
-  useEffect(()=>{
-    cart.map((e)=>{setTotal(e.price+total)})
-  },[cart])
   return(
     <>
     <li className="nav-item" >
@@ -19,16 +16,16 @@ const Carrito = ()=>{
       {isOpen?
       <div className='popover space-y-2'>
         <h4>Carrito:</h4>
-      {cart.length>0?
+      {items.filter(e=>e.added==true).length!=0?
       <>
-      {cart.map((e,index)=>{return(
+      {items.map((e,index)=>{return(
         <>
-          <CarritoItem data={e} key={index}/>
+          {e.added?<CarritoItem data={e} key={index}/>:''}
         </>
       )
     })}
 
-    <h4>{total}</h4>
+    <h4>{}</h4>
       </>
       :<h4>no hay elementos en el carrito</h4>
       }
