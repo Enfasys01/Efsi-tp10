@@ -1,21 +1,21 @@
 import {BsFillCartXFill} from 'react-icons/bs'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import CartContext from '../Context/CartContext'
 import './CarritoItem.css'
 const CarritoItem = (props) => {
-  const [cart, setCart, total, setTotal] = useContext(CartContext)
+  const [items, setItems] = useState(props.items)
   return(
     <>
     <div className="flex item">
       <img srcSet={props.data.src} className='img-sm'/>
       <div className=''>
-        <span style={{fontSize:20}}>{props.data.title} {props.data.id}</span>
+        <span style={{fontSize:20}}>{props.data.title}</span>
       <div className='delete-btn'>
         <span style={{fontSize:20}} onClick={()=>{
-          console.log(total)
-          setTotal(total-props.data.price)
-          setCart(cart.filter(e=>e!==props.data))
-          }}>
+          let list = items;
+          list[props.data.id].added=false;
+          setItems(list)
+        }}>
           <BsFillCartXFill/> eliminar
         </span>
       </div>

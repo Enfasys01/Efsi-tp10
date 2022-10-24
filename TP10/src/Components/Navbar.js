@@ -1,5 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Carrito from './Carrito'
+import {AiOutlineShoppingCart} from 'react-icons/ai'
+import './Navbar.css'
+
 const options=[
   {title:'Home', path:'/'},
   {title:'Quienes somos', path:'/QuienesSomos'},
@@ -8,7 +12,11 @@ const options=[
 ]
 
 export default function Navbar(){
+  const [isOpen, setOpen] = useState(false)
     return(
+      <>
+      {isOpen?<div className='back' onClick={()=>{setOpen(false)}}></div>:""}
+        
         <nav class="navbar navbar-expand-sm">
             <div class="container">
               <div class="navbar-brand">
@@ -24,10 +32,19 @@ export default function Navbar(){
                     <div class="nav-link" ><Link to={e.path}>{e.title}</Link></div>
                   </li>
                   </>)})}
-                  <Carrito/>
+                  <li className="nav-item" >
+
+                  <div className="nav-link" onClick={()=>{setOpen(!isOpen);console.log(isOpen)}}>
+                    <AiOutlineShoppingCart size={30}/>
+                  </div>
+                  {isOpen?<><Carrito/>
+                  </>
+                  :""}
+                  
+                  </li>
                 </ul>
               </div>
             </div>
-          </nav>
+          </nav></>
     );
 }
