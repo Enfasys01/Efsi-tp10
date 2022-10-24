@@ -2,7 +2,10 @@
   width: 100px;
   height: 100px; 
   margin-right: 20px;
+  margin-left: 20px;
   object-fit: cover;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .flex{
@@ -11,11 +14,12 @@
 
 .delete-btn{
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .delete-btn>span{
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
   background: rgb(192, 0, 0);
 }

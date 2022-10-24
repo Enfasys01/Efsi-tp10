@@ -6,6 +6,7 @@ const list = [
       desc:'Mueble colgante para lavario',
       price:15000,
       added:false,
+      num:1
   },
   {
       id:1,
@@ -14,6 +15,7 @@ const list = [
       desc:'Una obra maestra del subrealismo contemporaneo',
       price:7500,
       added:false,
+      num:1
   },
   {
     id:2,
@@ -22,6 +24,7 @@ const list = [
     desc:'Mejor siempre estar acompañado',
     price:10000,
     added:false,
+    num:1
   },
   {
     id:3,
@@ -30,6 +33,7 @@ const list = [
     desc:'Feel the BASS',
     price:17500,
     added:false,
+    num:1
   },
   {
     id:4,
@@ -38,6 +42,7 @@ const list = [
     desc:'So.. Witch one will you choose?',
     price:12000,
     added:false,
+    num:1
   },
 ]
 export default list

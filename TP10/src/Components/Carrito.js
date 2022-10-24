@@ -6,15 +6,16 @@ import CarritoItem from './CarritoItem'
 const Carrito = ()=>{
   const [items, setItems] = useContext(CartContext)
   const [total, setTotal] = useState(0)
+  const [refresh, setRefresh] = useState(false)
   useEffect(()=>{
     let tot = 0
     items.map((e)=>{
       if(e.added==true){
-        tot= tot + e.price
+        tot= tot + e.price * e.num
       }
     })
     setTotal(tot)
-    },[])
+    },[refresh])
     console.log(items, total)
   return(
     <>
@@ -26,7 +27,7 @@ const Carrito = ()=>{
       <>
       {items.map((e,index)=>{return(
         <>
-          {e.added && <CarritoItem data={e} items={items} key={index}/>}
+          {e.added && <CarritoItem data={e} refresh={[refresh, setRefresh]} key={index}/>}
         </>
       )
     })}

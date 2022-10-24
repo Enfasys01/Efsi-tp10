@@ -73,6 +73,7 @@ body, html {
   top: 10px;
   height: 20vw;
   min-height: 50px;
+  max-height: 250px;
   width: 75% !important;
 }
 
