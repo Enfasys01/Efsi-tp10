@@ -2,7 +2,9 @@ import './Producto.css'
 import {BsFillCartPlusFill} from 'react-icons/bs'
 import { useContext } from 'react';
 import CartContext from '../Context/CartContext';
-export default function Producto(props){
+import PropTypes from 'prop-types'
+
+function Producto(props){
     const [items, setItems] = useContext(CartContext)
     console.log(items[props.id])
     return(
@@ -27,3 +29,10 @@ export default function Producto(props){
                 </div>
     );
 }
+
+Producto.propTypes = {
+    id: PropTypes.number,
+    data: PropTypes.object
+  }
+
+export default Producto

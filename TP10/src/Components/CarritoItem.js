@@ -2,6 +2,8 @@ import {BsFillCartXFill} from 'react-icons/bs'
 import { useContext, useEffect, useState } from 'react'
 import CartContext from '../Context/CartContext'
 import './CarritoItem.css'
+import PropTypes from 'prop-types'
+
 const CarritoItem = (props) => {
   const [items, setItems] = useContext(CartContext)
   const [num, setNum] = useState(1)
@@ -43,6 +45,10 @@ const CarritoItem = (props) => {
     </div>
     </>
   )
+}
+
+CarritoItem.propTypes = {
+  data: PropTypes.object
 }
 
 export default CarritoItem
