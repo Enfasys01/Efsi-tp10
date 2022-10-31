@@ -19,14 +19,13 @@ const CarritoItem = (props) => {
           <span style={{fontSize:20}}>${props.data.price}</span>
         </div>
         <div>
-          <input type="number" style={{width:"100px"}} onChange={
+          <input type="number" style={{width:"100px"}}  min="1" defaultValue={items[props.data.id].num} onChange={
             (val)=>{
               setNum(parseInt(val.target.value));
               let list = items;
               list[props.data.id].num= val.target.value;
               setItems(list)
               console.log(val.target.value)}}/>
-
               
         </div>
       <div className='delete-btn'>
