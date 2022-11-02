@@ -1,11 +1,12 @@
 import './Producto.css'
-import {BsFillCartPlusFill} from 'react-icons/bs'
-import { useContext } from 'react';
+import {BsFillCartPlusFill, BsFillCartCheckFill} from 'react-icons/bs'
+import { useContext, useState } from 'react';
 import CartContext from '../Context/CartContext';
 import PropTypes from 'prop-types'
 
 function Producto(props){
     const [items, setItems] = useContext(CartContext)
+    const [reload, setReload] = useState(false)
     console.log(items[props.id])
     return(
         <div class="col-12 col-md-4">
@@ -24,7 +25,9 @@ function Producto(props){
                             preItems[props.id].added=true;
                             setItems(preItems)
                             console.log(items)
-                            }}> <span> <span><BsFillCartPlusFill/></span> Agregar al carrito </span></div>
+                            setReload(!reload)
+                            }}> 
+                                {items[props.id].added==true?<span> <span><BsFillCartCheckFill/></span> Agregado al carrito </span>:<span> <span><BsFillCartPlusFill/></span> Agregar al carrito </span>}</div>
                     </div>
                 </div>
     );
